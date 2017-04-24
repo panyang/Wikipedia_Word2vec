@@ -1,2 +1,2 @@
-# Wikipedia_Word2vec
-Train Word2vec Model based on Wikipedia
+# Word2vec 4 Wikipedia
+Train Word2vec Model based on Wikipedia by Python Gensim
