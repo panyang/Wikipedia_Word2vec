@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import os.path
+import os
 import sys
 import multiprocessing
 
@@ -13,6 +13,7 @@ if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
     logger = logging.getLogger(program)
 
+    logging.basicConfig(format='%(asctime)s: %(levelname)s: %(message)s')
     logging.root.setLevel(level=logging.INFO)
     logger.info("running %s" % ' '.join(sys.argv))
 
