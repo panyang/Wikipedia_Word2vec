@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: Pan Yang (panyangnlp@gmail.com)
+# Copyright 2017
+
+from __future__ import print_function
 
 import logging
 import os
@@ -19,14 +23,13 @@ if __name__ == '__main__':
 
     # check and process input arguments
     if len(sys.argv) < 4:
-        print(globals()['__doc__'] % locals())
+        print("Useing: python train_word2vec_model.py input_text "
+              "output_gensim_model output_word_vector")
         sys.exit(1)
     inp, outp1, outp2 = sys.argv[1:4]
 
-    model = Word2Vec(LineSentence(inp), size=400, window=5, min_count=5,
+    model = Word2Vec(LineSentence(inp), size=200, window=5, min_count=5,
                      workers=multiprocessing.cpu_count())
 
-    # trim unneeded model memory = use(much) less RAM
-    # model.init_sims(replace=True)
     model.save(outp1)
     model.wv.save_word2vec_format(outp2, binary=False)
