@@ -31,7 +31,7 @@ if __name__ == '__main__':
     output = open(outp, 'w')
     wiki = WikiCorpus(inp, lemmatize=False, dictionary={})
     for text in wiki.get_texts():
-        if six.PY3:
+        if six.PY2:
             output.write(b' '.join(text).decode('utf-8') + '\n')
         #   ###another method###
         #    output.write(
